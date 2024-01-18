@@ -1,0 +1,143 @@
+:root {
+    --radius: 5px;
+    --padding: 10px;
+    
+    --buttonRadius: 100px;
+  }
+
+.container {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.6fr 3fr 0.8fr 0.6fr;
+    grid-gap: 0.5rem;
+    height: 100vh;
+    grid-template-areas:
+    "header header header"
+    "cookie cookie cookieCount"
+    "shop options stats"
+    "footer footer footer";
+}
+
+header {
+    background-color: burlywood;
+    grid-area: header;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    max-width: 160px;
+    margin-right: 10px;
+}
+
+
+
+header h2 {
+    font-size: 24px; 
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#cookie {
+    background-color: blanchedalmond;
+    grid-area: cookie;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+
+#cookieButton {
+    width: 400px;
+    height: 300px;
+    background: url("cookie.png") center/cover;
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+#cookieButton:hover {
+    transform: scale(1.05);
+    filter: grayscale(30%);
+    cursor: pointer;
+}
+
+#cookies {
+    font-size: 30px;
+    background-color: bisque;
+    grid-area: cookieCount;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#cookieCount {
+    margin-left: 10px;
+}
+
+
+.menu {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.menu:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+#shop {
+    background-color: #aaa;
+    grid-area: shop;
+    border-radius: var(--buttonRadius);
+    padding-top: var(--padding);
+}
+
+#options {
+    background-color: #bbb;
+    grid-area: options;
+    border-radius: var(--buttonRadius);
+    padding-top: var(--padding);
+}
+
+#stats {
+    background-color: #ccc;
+    grid-area: stats;
+    border-radius: var(--buttonRadius);
+    padding-top: var(--padding);
+}
+
+footer {
+    font-size: 20px;
+    background-color: cornsilk;
+    grid-area: footer;
+    border-radius: var(--radius);
+    padding-top: var(--padding);
+}
+
+@media only screen and (max-width:550px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 2fr 1fr 0.5fr 0.5fr 0.5fr 0.2fr;
+        grid-template-areas: 
+        "header"
+        "cookie"
+        "cookieCount"
+        "shop"
+        "options"
+        "stats"
+        "footer"
+    }
+}
